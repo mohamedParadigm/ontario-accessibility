@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Texas Chicken®</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="images/favicon.png" />
+
+    <link href="css/landing-style.css" rel="stylesheet" type="text/css" />
+    <!-- Dark Mode -->
+    <link rel="stylesheet" href="css/theme-variables.css" />
+    <!-- Accessability -->
+    <script src="js/acctoolbar/acctoolbar.min.js"></script>
+
+    <!--<script src="map/gloader.js" type="text/javascript"></script>-->
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", {
+        packages: ["geochart"],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        mapsApiKey: "AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY",
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        //                var data = google.visualization.arrayToDataTable([
+        //                    ['Country', 'Latitude', 'url'],
+        //                    ['Iraq', 36, "google.com"], ['saudi arabia', -8, "google.com"], ['Bahrain', -24, "google.com"],
+        //                    ['Oman', 36, "google.com"], ['united arab emirates', -8, "google.com"], ['Jordan', 6, "google.com"], ['Pakistan', -24, "google.com"],
+        //                    ['Singapore', 36, "google.com"], ['Malaysia', -8, "google.com"], ['Vietnam', 6, "google.com"], ['Thailand', -24, "google.com"],
+        //                    ['Indonesia', 36, "google.com"], ['New Zealand', -8, "google.com"], ['Laos', 6, "google.com"], ['kenya', -24, "google.com"],
+        //                ]);
+        var data = new google.visualization.DataTable();
+        var data1 = new google.visualization.DataTable();
+
+        data.addColumn("string", "Country");
+        data.addColumn("number", "Value");
+        data.addColumn({ type: "string", role: "tooltip" });
+
+        data1.addColumn("string", "url");
+        data1.addRows([
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+          ["google.com"],
+        ]);
+        var ivalue = new Array();
+
+        data.addRows([
+          [{ v: "Canada" }, 0, "view website"],
+          [{ v: "Guyana" }, 0, "view website"],
+          [{ v: "Honduras" }, 0, "view website"],
+          [{ v: "Puerto Rico" }, 0, "view website"],
+          [{ v: "Mexico" }, 0, "view website"],
+
+          [{ v: "Tobago" }, 0, "view website"],
+          [{ v: "Trinidad and Tobago" }, 0, "view website"],
+          [{ v: "Curaçao" }, 0, "view website"],
+          [{ v: "St.Lucia" }, 0, "view website"],
+        ]);
+
+        var options = {
+          backgroundColor: {
+            fill: "#FFFFFF",
+            stroke: "#FFFFFF",
+            strokeWidth: 0,
+          },
+          colorAxis: { minValue: 0, maxValue: 0, colors: ["#f8b02d"] },
+          legend: "none",
+          backgroundColor: { fill: "#fff", stroke: "#FFFFFF", strokeWidth: 0 },
+          //                    datalessRegionColor: '#a39382',
+          datalessRegionColor: "#2d2926",
+          // displayMode: 'regions',
+          enableRegionInteractivity: "true",
+          // resolution: 'provinces',
+          region: "world",
+
+          keepAspectRatio: true,
+          tooltip: { textStyle: { color: "#2d2926" }, trigger: "focus" },
+        };
+
+        var chart = new google.visualization.GeoChart(
+          document.getElementById("geochart-colors")
+        );
+        google.visualization.events.addListener(chart, "select", function () {
+          var selection = chart.getSelection();
+          if (selection.length > 0) {
+            //                        alert(data1.getValue(selection[0].row, 0));
+            window.open(
+              "http://" + data1.getValue(selection[0].row, 0),
+              "_blank"
+            );
+          }
+        });
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark texas_navbar texas-navbar-light"
+      id="texas-navbar"
+    >
+      <div class="container">
+        <a class="navbar-brand abs" href="index.html">
+          <img src="images/logoW.png" alt="" />
+        </a>
+      </div>
+    </nav>
+    <!-- END nav -->
+
+    <section class="texas-section contact-section">
+      <div class="col-md-12 m-0 p-0 row min-height">
+        <div class="col-md-4 map-landing texas-animate">
+          <div class="p-4 pb-0 pt-5">
+            <div class="heading-section texas-animate">
+              <h1 class="mb-4">Discover Texas Chicken<sub>™</sub></h1>
+            </div>
+            <select
+              class="selectpicker"
+              data-live-search="true"
+              data-size="7"
+              title="Choose your country"
+              data-width="250px"
+            >
+              <optgroup label="AFRICA">
+                <option data-tokens="frosting">kenya</option>
+              </optgroup>
+              <optgroup label="Europe">
+                <option data-tokens="frosting">Bulgaria</option>
+                <option data-tokens="frosting">Belarus</option>
+              </optgroup>
+
+              <optgroup label="ASIA">
+                <option data-tokens="ketchup mustard">Iraq</option>
+                <option data-tokens="mustard">saudi arabia</option>
+                <option data-tokens="mustard">Riyadh</option>
+                <option data-tokens="frosting">Bahrain</option>
+                <option data-tokens="frosting">Oman</option>
+                <option data-tokens="frosting">united arab emirates</option>
+                <option data-tokens="frosting">Jordan</option>
+                <option data-tokens="frosting">Cambodia</option>
+                <option data-tokens="frosting">Pakistan</option>
+                <option data-tokens="frosting">Singapore</option>
+                <option data-tokens="frosting">Malaysia</option>
+                <option data-tokens="frosting">Vietnam</option>
+                <option data-tokens="frosting">Thailand</option>
+                <option data-tokens="frosting">Indonesia</option>
+                <option data-tokens="frosting">New Zealand</option>
+                <option data-tokens="frosting">Laos</option>
+              </optgroup>
+            </select>
+            <div class="d-inline-block">
+              <a class="btn btn-primary nav-link landing-btn" href="index.html">
+                GO</a
+              >
+            </div>
+          </div>
+          <div class="m-2">
+            <p class="landingP">
+              Church’s Chicken™ is evolving and changing in recognition of our
+              Texas heritage. Look for our new Church’s Texas Chicken™ logo and
+              brand image coming to a restaurant near you soon!
+            </p>
+            <!--<p class="closevideo">X</p>-->
+            <video
+              width="100%"
+              autoplay=""
+              muted=""
+              loop=""
+              playsinline=""
+              id="hidevideo"
+            >
+              <source
+                src="images/translanding.mp4"
+                type="video/mp4"
+                codecs="H.264/MPEG-4"
+              />
+            </video>
+            <!--<img src="images/translanding.gif" alt=""/>-->
+          </div>
+        </div>
+        <div class="col-md-8 contact-info texas-animate landing-v pr-0">
+          <div class="global">
+            <p>Click on the country to view it's website</p>
+          </div>
+          <div id="geochart-colors" class="global"></div>
+
+          <!--<div id="map_canvas" class="global"></div>-->
+          <div class="global-landing">
+            <img src="images/gif.gif" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="texas-footer texas-section img top-0">
+      <div class="overlay"></div>
+
+      <div class="copyrights">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 p-0">
+              <p>
+                ©2019. All rights reserved. | Developed &amp; Designed by
+                <a
+                  href="http://www.paradigmegypt.com/"
+                   target="_blank"  aria-label="external"
+                  class="paradigm"
+                  ><b>PSdigital</b></a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js" type="text/javascript"></script>
+  </body>
+</html>

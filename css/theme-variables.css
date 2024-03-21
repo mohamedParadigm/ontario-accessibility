@@ -1,0 +1,33 @@
+:root {
+  --dark-color: #2d2926;
+  --light-color: #fff;
+}
+
+body.dark-mode-on,
+body.dark-mode-on .bg-white,
+body.dark-mode-on .texas-ban.story-ban,
+body.dark-mode-on .locationFilter .accordion--heading-row:hover {
+  background-color: var(--dark-color) !important;
+  color: var(--light-color) !important;
+}
+body.dark-mode-on .texas-menu-wood,
+body.dark-mode-on .bgwood,
+body.dark-mode-on .map-landing,
+body.dark-mode-on .bg-light2 {
+  background: var(--dark-color) !important;
+  color: var(--light-color) !important;
+}
+body.dark-mode-on p,
+body.dark-mode-on p span,
+body.dark-mode-on .texas-ban.story-ban .breadcrumbs i,
+body.dark-mode-on .texas-careers .blog-entry .text .heading a,
+body.dark-mode-on .contact-form .form-control,
+body.dark-mode-on .contact-form .form-control::-webkit-input-placeholder,
+body.dark-mode-on .contact-form .form-control::placeholder,
+body.dark-mode-on .locationFilter .accordion--heading-row h2,
+body.dark-mode-on .accordion--heading-row h2 {
+  color: var(--light-color) !important;
+}
+body.dark-mode-on .blogs .blog-entry {
+  box-shadow: 1px 1px 5px 1px #e4e4e4 !important;
+}
